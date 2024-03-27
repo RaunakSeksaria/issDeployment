@@ -102,7 +102,7 @@ def index():
 def login():
     if request.method == 'POST':
         # connect to the database
-        connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=disable")
+        connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=verify-full&sslrootcert=/root.crt")
         cursor = connection.cursor()
         
         # retrieve data from the form
@@ -136,7 +136,7 @@ def login():
 def signup():
     if request.method == 'POST':
         # connect to the server
-        connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=disable")
+        connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=verify-full&sslrootcert=/root.crt")
         cursor = connection.cursor()
         
         # get data from the html form
@@ -175,7 +175,7 @@ def upload():
     if request.method == 'POST':
         
         # connect to the database
-        connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=disable")
+        connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=verify-full&sslrootcert=/root.crt")
         cursor = connection.cursor()
         
         # get the images from the form
@@ -207,7 +207,7 @@ def home():
         return redirect('/login')
     
     # connect to the database
-    connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=disable")
+    connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=verify-full&sslrootcert=/root.crt")
     cursor = connection.cursor()
     
     # get the username, images and other data from the database
@@ -264,7 +264,7 @@ def audio():
 @app.route('/admin')
 def admin():
     # connect to the database
-    connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=disable")
+    connection = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=verify-full&sslrootcert=/root.crt")
     cursor = connection.cursor()
     
     # get the userdata from the database
@@ -296,7 +296,7 @@ def edit():
         return redirect('/login')   
     
     # connect to the database
-    conn = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=disable")
+    conn = psycopg2.connect("postgresql://raunak:p3w3jJ5ID9ep5rMve2UhKg@iss-project-8924.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/user_data?sslmode=verify-full&sslrootcert=/root.crt")
     cursor = conn.cursor()
 
     # get the images from the database
